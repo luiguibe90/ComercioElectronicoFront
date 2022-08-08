@@ -1,0 +1,20 @@
+<h3 class="title">MARCAS ACTUALMENTE EN STOCK</h3> 
+
+<!-- <app-product-form (productNewOut)="productNewOut($event)"></app-product-form> -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col"><a class="button-table" routerLink="/admin/brands/create">Crear Marca</a></th>
+            
+        </tr>
+    </thead>
+    <tbody *ngIf="brands.length > 0">
+        <tr *ngFor="let brand of brands">
+            <td>{{brand.name}}</td>
+            <td class="buttons-flex">
+                <a class="button-table"  [routerLink]="['/admin/brands/edit/',brand.id]"><i class="fa-solid fa-pen"></i></a>
+                <button class="button-table" (click)="deleteBrand(brand.id!)"><i class="fa-solid fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

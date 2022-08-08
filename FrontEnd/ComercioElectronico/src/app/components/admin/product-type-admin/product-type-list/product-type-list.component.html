@@ -1,0 +1,17 @@
+<h3 class="title">TIPO DE PRODUCTOS</h3> 
+
+<!-- <app-product-form (productNewOut)="productNewOut($event)"></app-product-form> -->
+<table class="table-products">
+    <thead class="thead">
+        <td><a class="button-table" routerLink="/admin/productType/create">Nuevo</a></td>
+    </thead>
+    <tbody *ngIf="productType.length > 0">
+        <tr *ngFor="let productType of productType">
+            <td>{{productType.name}}</td>
+            <td class="buttons-flex">
+                <a class="button-table" [routerLink]="['/admin/productTypes/edit/',productType.id]"><i class="fa-solid fa-pen"></i></a>
+                <button class="button-table" (click)="deleteProductType(productType.id!)"><i class="fa-solid fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

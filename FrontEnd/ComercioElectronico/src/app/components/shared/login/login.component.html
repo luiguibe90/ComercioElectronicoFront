@@ -1,0 +1,25 @@
+<div class="login">
+    <div class="contenedor-login">
+        <div class="centrar-login">
+            <h1 class="login-titulo">iShop</h1>
+            <form [formGroup]="formGroupLogin" (ngSubmit)="onSubmit($event)" #loginForm="ngForm">
+                <div class="input-usuario">
+                    <label class="login-label" for="inputUsuario">Usuario</label>
+                    <input class="login-input" type="text" formControlName="userName" placeholder="Ingresa el usuario"
+                        id="inputUsuario" />
+                    <span class="login-alert" id="alertUsuario" *ngIf="userNameField?.invalid && (userNameField?.touched || loginForm.submitted)">Requerido</span>
+                </div>
+                <div class="input-usuario">
+                    <label class="login-label" for="inputContrasena">Contraseña</label>
+                    <input class="login-input" type="password" formControlName="password" placeholder="Ingresa la contraseña" autocomplete="current-password"
+                        id="inputContrasena"/>
+                    <span class="login-alert" id="alertContrasena" *ngIf="passwordField?.invalid && (passwordField?.touched || loginForm.submitted)">Requerido</span>
+                    <span class="login-alert" id="alertContrasena">{{passwordMessage}}</span>
+                </div>
+                <button class="login-button" type="submit">
+                    <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

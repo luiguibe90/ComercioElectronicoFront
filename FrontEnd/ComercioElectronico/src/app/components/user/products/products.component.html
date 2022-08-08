@@ -1,0 +1,23 @@
+<h1 class="product-page-title" *ngIf="productsIn.length > 0 else titleNotProducts">{{productTypeSelectedIn}}</h1>
+<ng-template #titleNotProducts>
+    <h1 class="product-page-title">Stock</h1>
+</ng-template>
+<hr>
+<div class="product-cards" *ngIf="productsIn.length > 0; else notExistProducts">
+    <a class="product-card" *ngFor="let product of productsIn"  [routerLink]="['/product',product.id]">
+        <img class="product-img" src="{{product.imageUrl}}" onerror="src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfDKQDSy8e-KJIHnylQr4ZnTNQtAA-xs986A&usqp=CAU'">
+        <div class="product-body">
+            <h3 class="product-title"><span>{{product.brand}}</span> {{product.name}}</h3>
+            <p class="product-description">{{product.description}}</p>
+            <span class="product-btn" *ngIf="product.stock > 0 else agotado">${{product.price}}</span>
+            <ng-template #agotado>
+            <span class="product-btn">Sin Stock</span>
+            </ng-template>
+        </div>
+    </a>
+</div>
+<ng-template #notExistProducts>
+    <div class="loading-div">
+        <div class="loading"></div>
+    </div>
+</ng-template>

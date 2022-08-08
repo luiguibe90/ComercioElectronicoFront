@@ -1,0 +1,19 @@
+.products-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.product-types{
+    width: 20%;
+    position: fixed;
+}
+.product-list{
+    width: 80%;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+}
+
+.content{
+    margin-top: 45px;
+}

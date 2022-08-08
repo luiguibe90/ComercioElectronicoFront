@@ -1,0 +1,17 @@
+<form
+  class="ProductType-form"
+  [formGroup]="formGroupProductType"
+  *ngIf="formGroupProductType"
+  (ngSubmit)="onSubmit($event)"
+  #formProductType="ngForm"
+>
+
+  <label for="name" class="label">Nombre <i *ngIf="nameField!.valid" class="fa-solid fa-circle-check"></i></label>
+  <input id="name" type="text" formControlName="name" placeholder="Nombre"/>
+  <span class="validation" *ngIf="nameField!.invalid && (nameField!.touched || formProductType.submitted)">Requerido</span>
+  
+
+
+
+  <button type="submit">Agregar</button>
+</form>

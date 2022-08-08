@@ -1,0 +1,23 @@
+<nav class="navbar">
+    <a routerLink="/products">
+        <img class="navbar-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/23/Ecommerce-timeline_1998.png" alt="logo-ecommerce">
+    </a>
+    
+    <ul class="navbar-items">
+        <li class="navbar-item">
+            <a class="navbar-link" routerLink="/admin">
+                Admin
+            </a>
+        </li>
+        <li class="navbar-item">
+            <a class="navbar-link" routerLink="/my-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </li>
+        <li class="navbar-item">
+            <a class="navbar-link" (click)="logOut()">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Salir
+            </a>
+        </li>
+    </ul>
+</nav>
